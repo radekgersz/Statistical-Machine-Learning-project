@@ -21,7 +21,8 @@ def split_data(data, test_size=0.2, random_state=23):
     return X_train, X_test, y_train, y_test
 
 
-def load_and_split(file_path, test_size=0.2, random_state=23):
+# IMPORT THIS FUNCTION INTO YOUR CODE TO LOAD AND SPLIT DATA
+def load_and_split(file_path, test_size=0.2, shuffle=True, random_state=23):
     data = load_data(file_path)
     return split_data(data, test_size, random_state)
 
