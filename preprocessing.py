@@ -16,13 +16,13 @@ def split_data(data, test_size=0.2, random_state=23):
     X = data.drop(columns=['target'])
     y = data['target']
     
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=random_state, stratify=y)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, shuffle=True, random_state=random_state, stratify=y)
 
     return X_train, X_test, y_train, y_test
 
 
 # IMPORT THIS FUNCTION INTO YOUR CODE TO LOAD AND SPLIT DATA
-def load_and_split(file_path, test_size=0.2, shuffle=True, random_state=23):
+def load_and_split(file_path, test_size=0.2, random_state=23):
     data = load_data(file_path)
     return split_data(data, test_size, random_state)
 
